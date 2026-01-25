@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="T0elVCEAq0WblLjQni4g0Q" Reference="WWxKmngVZUOdgdusUY41ww/KN0q_g9fA0OC__wCjiJ3rg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/b/home" CVScreenId="f7cc499b-b8b1-4a45-9849-c3e58692770c" DesignTimeRectangle="56, 965, 33, 32" ElementType="Icon" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='foid:5' tag='IMG' /&gt;" Guid="225e37bb-0d83-403b-ad84-a731598dbc9d" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Home - Smartsheet.com' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="c2fec8b91481708fb5e8872f3f1b8ca0.png" xmlns="">0w59U9xLWs0C7iS7cO1OC2g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

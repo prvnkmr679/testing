@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rzRLRWs_mUCzfC-hfxbVIA" Reference="WWxKmngVZUOdgdusUY41ww/OixzRSbmTkCpwbnrh-DGZQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/b/login" CVScreenId="1e6b8a66-6f45-48b8-89eb-34b777695f56" DesignTimeRectangle="660, 574, 600, 63" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='button' tag='BUTTON' class='emailPasswordOption' aaname=' Sign in with email and password' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Sign in with email and password' /&gt;" Guid="d94cc1b9-477c-49f2-b4fd-742b378230b2" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log In | Smartsheet' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="61b652be5f863cf8277a1a9b318a93f0.png" xmlns="">0yt3cEPbndEm5otYSifQfIg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

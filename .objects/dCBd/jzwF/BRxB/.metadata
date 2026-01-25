@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Home - Smartsheet.com(1)",
+  "Type": "Screen",
+  "Id": "BRxBbV0ZhUWHf9N2B-7cBA",
+  "Reference": "WWxKmngVZUOdgdusUY41ww/BRxBbV0ZhUWHf9N2B-7cBA",
+  "ParentRef": "WWxKmngVZUOdgdusUY41ww/jzwFkdN-3USvAowZzjuzgw",
+  "Created": "2026-01-19T11:06:55.4702186Z",
+  "Updated": "2026-01-19T11:06:55.4702186Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="QOvoj98f4EyU9-I8ymcEZQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" Selector="&lt;html app='chrome.exe' title='Untitled sheet - Smartsheet.com' /&gt;" Url="app.smartsheet.com/sheets/2Wvp37fGPChCcxpq3QpHcpPhw6jRf2mxF3MJ5f81" />
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="yAp8rAmP-0ilOu-dVqs8Fg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="a958cd65-5cfc-4cad-a2a0-8786c06d9f4a" CvElementArea="846, 685, 812, 65" CvType="InputBox" DesignTimeRectangle="848, 687, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='lodestar--focus-using-before css-133eide' parentid='desktopHome' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a9b5f707-e7be-40ed-9a64-d0efc0fe9538" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="a958cd65-5cfc-4cad-a2a0-8786c06d9f4a" DesignTimeRectangle="848, 645, 100, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Quantity' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Quantity' /&gt;" Guid="9e7d7448-92da-472a-9f38-b8b910abf983" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="6540642a7a51e7b2f7e257b59b838226.png" xmlns="">01kPw3r7p1UiloyOoecn18A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

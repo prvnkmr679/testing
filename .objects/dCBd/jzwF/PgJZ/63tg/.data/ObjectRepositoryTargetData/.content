@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="RWK6Wr5i-kaIOnh3LATlFQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/b/login" CVScreenId="82ca18da-a0bc-474e-8ac0-2e0e1a6cb54d" CvElementArea="664, 947, 594, 60" CvType="InputBox" DesignTimeRectangle="663, 947, 594, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='loginEmail' type='email' tag='INPUT' class='' placeholder='Enter your email' aaname='Email*' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' fuzzylevel:aaname='0.0' /&gt;" Guid="f12b976a-88a2-4780-aa3b-f7e68d825b85" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log In | Smartsheet' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="82ca18da-a0bc-474e-8ac0-2e0e1a6cb54d" DesignTimeRectangle="663, 908, 594, 27" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='clsJspLabel' aaname='Email' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Email' /&gt;" Guid="2f118365-c520-49dc-a089-598962ccdfed" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="68cb4e8f5099452fd46059288b46c21c.png" xmlns="">0PsL_fMQJmUujO90XJaAqXg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

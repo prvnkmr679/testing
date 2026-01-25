@@ -1,0 +1,6 @@
+{
+  "Name": "Orders_Processing_REF",
+  "ProjectType": "Process",
+  "Description": "Robotic Enterprise Framework",
+  "MainFile": "Main.xaml"
+}

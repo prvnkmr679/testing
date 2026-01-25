@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="t9yvc2OLE0uqhs_i5yAf_w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/home" CVScreenId="7e067b8b-e8f9-45ba-8e60-c923aaa466f1" DesignTimeRectangle="54, 261, 50, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='home-label' tag='SPAN' type='' class='css-1apdch3 css-4t70hx' aaname='Home' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Home' /&gt;" Guid="4358bd20-f46b-4e3e-9e85-683a66f98fba" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Home - Smartsheet.com' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="7e067b8b-e8f9-45ba-8e60-c923aaa466f1" DesignTimeRectangle="64, 222, 30, 30" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='css-jmi2eo' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="51bff4a3-862d-4d2e-9e61-1170d8927122" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="b391207881e366cba17a0e6dc017a8a5.png" xmlns="">0NsF4HEwb3EOt2gb2qIMsVA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

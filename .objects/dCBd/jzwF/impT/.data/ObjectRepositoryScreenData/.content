@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="cxTc7BbGB0abBFXsl2o7xg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-11, -11, 1942, 1030" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAVdJREFUOE9jYGBgYFA2D/xPCk7Mb/oP0gcH6Arw4aTC5v+7Dp36S5YBfnHF/2/ff/zfyDWWdAPMvRL/P3vx+n9kRg2YT7IBew+f/r9kzXYY/x9eA/SdolD4hXX9/z9++vLf0CUGvwEgBQePnfsPAsvW7QSLadtH/H/77sP/jkkL4QaqWARhN0DdOuR/U+8csAEgEJhY9r+5f+7/Zy/f/NeyC0cyIBh/IG7ZfQRswNFTF/8/f/Xmf3nLFBR5VUsCBvjHl8Bd8fT5K7DL0Az4g9cAED5x9grYAJAX0OVULAJ/EDQgraTt/5ev3/8bOEUjNJoHfgSzLYK+ETRAxSLof13XzPcwjSqWgdkalqG6KhaBv1UsAj8RNACu0TyoX80hUgSmVsU8uELFPPA8PgP+qZgHHVe1CM7QdgjlQVEIBaGhocwoAhaeiT8cAjMOgJyp4hAkgyJJAAAA5Mdx/gdGd4gAAAAASUVORK5CYII=" Selector="&lt;html app='chrome.exe' title='Home - Smartsheet.com' /&gt;" Url="https://app.smartsheet.com/home" Version="V2">
+      <imageRef attrName="InformativeScreenshot" originalValue="a220381929342937d353d99ec062ccd8.jpg" xmlns="">0ki0PlTmhFkyFrS24l82Kdw</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

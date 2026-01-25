@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ZdcDF5UIrU2wuyT75tmY-g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="efacacfb-a7d0-4e07-b5a8-0325825498a2" CvElementArea="846, 756, 812, 65" CvType="InputBox" DesignTimeRectangle="848, 758, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='lodestar--focus-using-before css-133eide' parentid='desktopHome' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="38319b10-6849-4e64-a73e-3e71cd72c9d0" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="efacacfb-a7d0-4e07-b5a8-0325825498a2" DesignTimeRectangle="848, 716, 107, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='lodestar-utils-fl-label-gen-id-lxvux4' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' aaname='UnitPrice' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='UnitPrice' /&gt;" Guid="d4f7fc0e-99e8-47c9-954d-f8f0acb0c1ab" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="43d40503ae8abc3126feea42f6810a94.png" xmlns="">0GDcx5W2OhE-iV53TM5spPA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

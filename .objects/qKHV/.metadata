@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome Overview - UiPath Orchestrator",
+  "Type": "App",
+  "Id": "qKHVuaz430OKQTixteMy9A",
+  "Reference": "WWxKmngVZUOdgdusUY41ww/qKHVuaz430OKQTixteMy9A",
+  "Created": "2026-01-22T04:58:48.0092876Z",
+  "Updated": "2026-01-22T04:58:48.0092876Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

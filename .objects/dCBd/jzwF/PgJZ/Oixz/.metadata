@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Sign in with email and …",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "OixzRSbmTkCpwbnrh-DGZQ",
+  "Reference": "WWxKmngVZUOdgdusUY41ww/OixzRSbmTkCpwbnrh-DGZQ",
+  "ParentRef": "WWxKmngVZUOdgdusUY41ww/PgJZfAOOZ0aMF39AcTn_SQ",
+  "Created": "2026-01-16T10:34:16.7158361Z",
+  "Updated": "2026-01-16T10:34:16.7158361Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

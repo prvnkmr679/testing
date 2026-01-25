@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="tUIQt21U6U-U1kBSQbjjDg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/r/create" CVScreenId="460664df-f7a5-42d0-9b90-4203af416cb6" DesignTimeRectangle="178, 291, 457, 30" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzyAccuracy="0.85" FuzzySelectorArgument="&lt;webctrl parentid='recents-panel-id' tag='A' type='' class='css-rxsfgg' aaname='Orders_Form' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Orders_Form' /&gt;" Guid="735ade97-6532-4928-a60e-7919cc622425" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Let&amp;apos;s start a new project, program, or process - Smartsheet.com' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="6245054e50120c495480c7299ea92fe6.png" xmlns="">0EFeSYlwXZUeLSjNn3dMgzA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

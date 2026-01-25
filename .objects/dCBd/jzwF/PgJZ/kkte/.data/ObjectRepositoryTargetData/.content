@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="t0Y90pEUfkW4CKnagZHXPQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/b/login" CVScreenId="7b9b4a04-d96f-4007-a035-2d5dfc8669cf" CvElementArea="662, 655, 596, 61" CvType="InputBox" DesignTimeRectangle="663, 656, 594, 60" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='loginPassword' type='password' tag='INPUT' class='' placeholder='Enter your password' aaname='Password' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="2ae55803-2f09-4b74-a77b-1b3f6f4162ca" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log In | Smartsheet' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="7b9b4a04-d96f-4007-a035-2d5dfc8669cf" CvTextArea="662, 620, 595, 23" CvTextArgument="Password Forgot your password?" CvType="Text" DesignTimeRectangle="663, 617, 594, 27" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='clsJspLabel' aaname='Password' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Password' /&gt;" Guid="723e266e-a017-49c4-9a61-efafea15d4ea" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="a4b9d889fc86a04a48637ae42556e48a.png" xmlns="">0QDM6rbcPGUmwGYHEPkN4Zg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

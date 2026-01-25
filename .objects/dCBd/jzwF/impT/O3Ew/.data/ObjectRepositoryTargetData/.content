@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2Z1Azr-ls06K8UxBhNs-sA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="a3472667-5704-47bb-894d-36c2ba358161" CvElementArea="844, 740, 125, 65" CvTextArea="870, 761, 73, 21" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="848, 742, 118, 60" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Submit' parentid='desktopHome' tag='BUTTON' type='button' class='lodestar--focus-using-before css-n7ab4a' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Submit' /&gt;" Guid="2715ce8b-4b85-42a5-9f9b-5cf3b8e40dd6" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="a3472667-5704-47bb-894d-36c2ba358161" DesignTimeRectangle="860, 757, 94, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='css-wis292' parentid='desktopHome' tag='SPAN' type='' aaname='Submit' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Submit' /&gt;" Guid="fab40c6c-0250-4810-bbb5-a383d8baaab0" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="96199cfff9204cc364acac23e0672e9b.png" xmlns="">0Zz6fUwTguk6BtUqephHYSA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

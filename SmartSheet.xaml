@@ -1,0 +1,808 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SmartSheet" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>SmartSheet_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_folders_sheets.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_template.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_sheets_template.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_attachments_file.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_Create.Bundle</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_folders.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_rows_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_rows_Create_NNRGJSBSEPY3EWP1KTXLR90Z0SPZP3.Bundle</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_sheets_rows_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_sheets.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_sheets_rows_Create_NNRGJSBSEPY3EWP1KTXLR90Z0SPZP3.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CEB24706B3B_sheets_rows_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CEB24706B3B_sheets_rows_Create_NNRGJSBSEPY3EWP1KTXLR90Z0SPZP3.Bundle</x:String>
+      <x:String>UiPath.BAF.Enums</x:String>
+      <x:String>UiPath.Swagger.Models</x:String>
+      <x:String>UiPath.CodeGen.Models.Connection</x:String>
+      <x:String>UiPath.Smartsheet.Models</x:String>
+      <x:String>UiPath.BAF.Models.Connection</x:String>
+      <x:String>UiPath.BAF.Models.Connection.APIConnection</x:String>
+      <x:String>UiPath.BAF.Telemetry</x:String>
+      <x:String>BAFLayer</x:String>
+      <x:String>UiPath.BAF.Models</x:String>
+      <x:String>UiPath.BAF.ServiceInterfaces</x:String>
+      <x:String>UiPath.Smartsheet.Activities</x:String>
+      <x:String>UiPath.CodeGen.Activities</x:String>
+      <x:String>UiPath.BAF.Activities</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Entity</x:String>
+      <x:String>UiPath.IntegrationService.Infrastructure.Descriptor</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Enums</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Telemetry</x:String>
+      <x:String>UiPath.BAF.Infrastructure</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Connection</x:String>
+      <x:String>UiPath.Smartsheet.IntegrationService.Activities</x:String>
+      <x:String>UiPath.IntegrationCore.Activities</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Contracts</x:String>
+      <x:String>UiPath.BAF.Models.Entity</x:String>
+      <x:String>UiPath.BAF.Properties</x:String>
+      <x:String>UiPath.BAF.Models.CrudOperation</x:String>
+      <x:String>UiPath.IntegrationService.Infrastructure.CEQL</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C4A01B4B56B_sheets.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C4A01B4B56B_sheets_template.Bundle</x:String>
+      <x:String>UiPath.Web.Activities.JSON.Models</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>C6399CDD166_folders_.QDOOsHt1LF1En0SB1ke1Vb</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_t.ZM89C12rlOE1vMJmQ3LFmUa1</AssemblyReference>
+      <AssemblyReference>C6399CDD166_sheets_t.dpkrAHb8dB136bkXlkL002</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_a.WfI6K2WMz0K1oTlgER7UuB</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_C.qczKD1DQO3L1X9hz14FTgbR3</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_folders.XW9duLMH1C1insC42yvOoc</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_r.Xjs6i1Sw8eP1dISuT43wkHI3</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets.uAhlx28LZ2R1BQOFR3zvU222</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_r.tuUtH3k6IRN15nznt1iak1f4</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>C6399CDD166_sheets_r.z8b6f3L3UlF1hOHt51j562o2</AssemblyReference>
+      <AssemblyReference>C6399CDD166_sheets.XV7iW2VkRML1XlTX02wEycH3</AssemblyReference>
+      <AssemblyReference>C6399CDD166_sheets_r.IW6xL3kYJWJ15JT9G2qpNxt</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>CEB24706B3B_sheets_r.PMtu53XnVKS1md1mg27dlxU4</AssemblyReference>
+      <AssemblyReference>CEB24706B3B_sheets_r.puzdo3a7jpD1ymvGj3LhTXl2</AssemblyReference>
+      <AssemblyReference>CEB24706B3B_sheets_r.1V7iJ1W2eoA1IvQR41oqCmF1</AssemblyReference>
+      <AssemblyReference>UiPath.Smartsheet</AssemblyReference>
+      <AssemblyReference>UiPath.BAFLayer.Activities.Packaging</AssemblyReference>
+      <AssemblyReference>UiPath.Smartsheet.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Smartsheet.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.BAF.Infrastructure</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Infrastructure</AssemblyReference>
+      <AssemblyReference>C4A01B4B56B_sheets.Neo0e3XJkLM11J3vBihlQn</AssemblyReference>
+      <AssemblyReference>C4A01B4B56B_sheets_t.zz0XN45RhtI1tHhIoD123C1</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SmartSheet" sap:VirtualizedContainerService.HintSize="578.6666666666666,3819.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="njl:JArray" Name="cellsArr" />
+      <Variable x:TypeArguments="njl:JArray" Name="rowsPayload" />
+      <Variable x:TypeArguments="njl:JArray" Name="ColumnArray" />
+      <Variable x:TypeArguments="x:Int64" Name="orderSheetId" />
+      <Variable x:TypeArguments="njl:JArray" Name="sheetsArray" />
+      <Variable x:TypeArguments="s:Nullable(x:Int64)" Name="id_Sheet" />
+      <Variable x:TypeArguments="x:Int32" Name="ResponseCode" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="ResponseHeaders" />
+      <Variable x:TypeArguments="x:String" Name="ResponseBody" />
+      <Variable x:TypeArguments="njl:JObject" Name="JObj" />
+      <Variable x:TypeArguments="njl:JArray" Name="JobjArray" />
+      <Variable x:TypeArguments="x:Int64" Name="VandanaWorkspaceID" />
+      <Variable x:TypeArguments="njl:JObject" Name="sheetObj" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Int64)" Name="ColMap" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Fetch Workspace Named Vandana Workspace" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <isactr:ConnectorHttpActivity Configuration="H4sIAAAAAAAACu1WS2/aQBD+K9UeKwdSDj1YVSQeTkClxU1Ieqhy2NgDLNi7yz5CHIv/3tm1TZKCWipFvTQcwDOe+eab2ZlZSnLOIEt1X3BDGQdFwpKMuLSm0pPwR0m+0hxISHIwC5GSgAyYlhktavWXRj0tpJO1UYzPUb6EtWUKUhIaZSGoIo1FQg0THA17Ii3INtjhW5XtgUc8lYJx8wrwC6ApKP2EJO6WkDjkc6FyalCTssQ5U1V8qsIEDIW5zYGbWnN25kNrKbiGY0OvLajiNQL/KdCdk/dLNQDN5mhfVgBdH6w62+q5dhiyFFx6NoPq7SXMvMevHdDob2hmvSm5iKbkdnvruLyAvFqIzVGQI/1dqNUsE5voQSrQ2mdY1Xc/XDy5mqJTfO2+B9E4mkZO7E77Q08Difw/uR7bkGg4sebgbP/D4agovHXtW9f+fackwg/toasANDbpjGYajgd2W6L2jRXcM9jEVGEk40YBt2V9tYV+4gNyjRcUjooxUoftNpWspXOqjF4AmFYi8nandYpmw3qWEKBrEUCxx90cAlWg3n1cbtad9/6D9t0kAekmjEqZsYpke6nRISDuXsb5Oqkz3rPABL75yyUst/g84tpQnsDLNG7wt4r/oXXqKSIsx/EW6jOgK7FMUrM4ecrm2aMnaNg9M0VN4gLwfwJL8MXEL4lmhWBdmoPAIqC0K18svG4iQTWV6CugBhz/Pk0WgKcjVlY2S6/c6XtKbDSokYG81seKIbkCmbsNhjstpsmKzuF5lp3qJH7D7wCXgIwpn1uEQh246k/hwfQykax8pO1PvL28Ei0JAAA=" ConnectionId="7282a2aa-a884-4b00-9c20-1b4a01b4b56b" DisplayName="Smartsheet HTTP Request Get Workspace List" sap:VirtualizedContainerService.HintSize="416,504" sap2010:WorkflowViewState.IdRef="ConnectorHttpActivity_2" UiPathActivityTypeId="a508ec5b-8e60-3437-9fe6-841f0f30ec0f">
+        <isactr:ConnectorHttpActivity.FieldObjects>
+          <isactr:FieldObject Name="method" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:String">GET</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="url" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:String">https://api.smartsheet.com/2.0/workspaces?maxItems=100&amp;lastKey=abcDefGhIjKlMnOpQrStUvWxYz</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="headers" Type="FieldArgument" />
+          <isactr:FieldObject Name="query" Type="FieldArgument" />
+          <isactr:FieldObject Name="body" Type="FieldArgument" />
+          <isactr:FieldObject Name="out_headers" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[ResponseHeaders]</OutArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="out_body" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="x:String">[ResponseBody]</OutArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="out_code" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="x:Int32">[ResponseCode]</OutArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+        </isactr:ConnectorHttpActivity.FieldObjects>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </isactr:ConnectorHttpActivity>
+      <If Condition="[ResponseCode&lt;&gt;200]" sap:VirtualizedContainerService.HintSize="416,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,178.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Throw Exception="[new SystemException(&quot;Get workspace API Call Failed with reason - &quot; + ResponseCode.ToString + &quot;:&quot; + ResponseBody)]" sap:VirtualizedContainerService.HintSize="416,118.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="416,57.333333333333336" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[JObj]" JsonString="[ResponseBody]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:DeserializeJson>
+      <Assign sap:VirtualizedContainerService.HintSize="416,57.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="njl:JArray">[JobjArray]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="njl:JArray">[CType(JObj("data"), Newtonsoft.Json.Linq.JArray)]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each currentJToken" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[JobjArray]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="njl:JToken">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="njl:JToken" Name="currentJToken" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,508.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[currentJToken(&quot;name&quot;).ToString = &quot;Vandana Workspace&quot;]" sap:VirtualizedContainerService.HintSize="452,448.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int64">[VandanaWorkspaceID]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int64">[CLng(currentJToken("id").ToString)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEach>
+    </Sequence>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,165.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <isactr:ConnectorHttpActivity Configuration="H4sIAAAAAAAACu1WS2/aQBD+K9UeKwdSDj1YVSQeTkClxU1Ieqhy2NgDLNi7yz5CHIv/3tm1TZKCWipFvTQcwDOe+eab2ZlZSnLOIEt1X3BDGQdFwpKMuLSm0pPwR0m+0hxISHIwC5GSgAyYlhktavWXRj0tpJO1UYzPUb6EtWUKUhIaZSGoIo1FQg0THA17Ii3INtjhW5XtgUc8lYJx8wrwC6ApKP2EJO6WkDjkc6FyalCTssQ5U1V8qsIEDIW5zYGbWnN25kNrKbiGY0OvLajiNQL/KdCdk/dLNQDN5mhfVgBdH6w62+q5dhiyFFx6NoPq7SXMvMevHdDob2hmvSm5iKbkdnvruLyAvFqIzVGQI/1dqNUsE5voQSrQ2mdY1Xc/XDy5mqJTfO2+B9E4mkZO7E77Q08Difw/uR7bkGg4sebgbP/D4agovHXtW9f+fackwg/toasANDbpjGYajgd2W6L2jRXcM9jEVGEk40YBt2V9tYV+4gNyjRcUjooxUoftNpWspXOqjF4AmFYi8nandYpmw3qWEKBrEUCxx90cAlWg3n1cbtad9/6D9t0kAekmjEqZsYpke6nRISDuXsb5Oqkz3rPABL75yyUst/g84tpQnsDLNG7wt4r/oXXqKSIsx/EW6jOgK7FMUrM4ecrm2aMnaNg9M0VN4gLwfwJL8MXEL4lmhWBdmoPAIqC0K18svG4iQTWV6CugBhz/Pk0WgKcjVlY2S6/c6XtKbDSokYG81seKIbkCmbsNhjstpsmKzuF5lp3qJH7D7wCXgIwpn1uEQh246k/hwfQykax8pO1PvL28Ei0JAAA=" ConnectionId="7282a2aa-a884-4b00-9c20-1b4a01b4b56b" DisplayName="Create Sheet in workspace HTTP" sap:VirtualizedContainerService.HintSize="416,57.333333333333336" sap2010:WorkflowViewState.IdRef="ConnectorHttpActivity_5" UiPathActivityTypeId="a508ec5b-8e60-3437-9fe6-841f0f30ec0f">
+            <isactr:ConnectorHttpActivity.FieldObjects>
+              <isactr:FieldObject Name="method" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">POST</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="url" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">["https://api.smartsheet.com/2.0/workspaces/" &amp; vandanaWorkspaceId.ToString &amp; "/sheets"]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="headers" Type="FieldArgument" />
+              <isactr:FieldObject Name="query" Type="FieldArgument" />
+              <isactr:FieldObject Name="body" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[New Newtonsoft.Json.Linq.JObject(
+  New Newtonsoft.Json.Linq.JProperty("name", "Order_Processed"),
+  New Newtonsoft.Json.Linq.JProperty(
+    "columns",
+    New Newtonsoft.Json.Linq.JArray(
+      New Newtonsoft.Json.Linq.JObject(
+        New Newtonsoft.Json.Linq.JProperty("title", "OrderID"),
+        New Newtonsoft.Json.Linq.JProperty("type", "TEXT_NUMBER"),
+        New Newtonsoft.Json.Linq.JProperty("primary", True)
+      ),
+      New Newtonsoft.Json.Linq.JObject(
+        New Newtonsoft.Json.Linq.JProperty("title", "CustomerName"),
+        New Newtonsoft.Json.Linq.JProperty("type", "TEXT_NUMBER")
+      ),
+      New Newtonsoft.Json.Linq.JObject(
+        New Newtonsoft.Json.Linq.JProperty("title", "Product"),
+        New Newtonsoft.Json.Linq.JProperty("type", "TEXT_NUMBER")
+      ),
+      New Newtonsoft.Json.Linq.JObject(
+        New Newtonsoft.Json.Linq.JProperty("title", "Quantity"),
+        New Newtonsoft.Json.Linq.JProperty("type", "TEXT_NUMBER")
+      ),
+      New Newtonsoft.Json.Linq.JObject(
+        New Newtonsoft.Json.Linq.JProperty("title", "UnitPrice"),
+        New Newtonsoft.Json.Linq.JProperty("type", "TEXT_NUMBER")
+      ),
+      New Newtonsoft.Json.Linq.JObject(
+        New Newtonsoft.Json.Linq.JProperty("title", "Status"),
+        New Newtonsoft.Json.Linq.JProperty("type", "TEXT_NUMBER")
+      ),
+      New Newtonsoft.Json.Linq.JObject(
+        New Newtonsoft.Json.Linq.JProperty("title", "TotalAmount"),
+        New Newtonsoft.Json.Linq.JProperty("type", "TEXT_NUMBER")
+      )
+    )
+  )
+).ToString()]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="out_headers" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[ResponseHeaders]</OutArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="out_body" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="x:String">[ResponseBody]</OutArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="out_code" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="x:Int32">[ResponseCode]</OutArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+            </isactr:ConnectorHttpActivity.FieldObjects>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </isactr:ConnectorHttpActivity>
+          <If Condition="[ResponseCode&lt;&gt;200]" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,182.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw Exception="[new SystemException(&quot;Create New Sheet List API Call Failed with reason - &quot; + ResponseCode.ToString + &quot;:&quot; + ResponseBody)]" sap:VirtualizedContainerService.HintSize="416,118.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_4" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <isactr:ConnectorHttpActivity Configuration="H4sIAAAAAAAACu1WS2/aQBD+K9UeKwdSDj1YVSQeTkClxU1Ieqhy2NgDLNi7yz5CHIv/3tm1TZKCWipFvTQcwDOe+eab2ZlZSnLOIEt1X3BDGQdFwpKMuLSm0pPwR0m+0hxISHIwC5GSgAyYlhktavWXRj0tpJO1UYzPUb6EtWUKUhIaZSGoIo1FQg0THA17Ii3INtjhW5XtgUc8lYJx8wrwC6ApKP2EJO6WkDjkc6FyalCTssQ5U1V8qsIEDIW5zYGbWnN25kNrKbiGY0OvLajiNQL/KdCdk/dLNQDN5mhfVgBdH6w62+q5dhiyFFx6NoPq7SXMvMevHdDob2hmvSm5iKbkdnvruLyAvFqIzVGQI/1dqNUsE5voQSrQ2mdY1Xc/XDy5mqJTfO2+B9E4mkZO7E77Q08Difw/uR7bkGg4sebgbP/D4agovHXtW9f+fackwg/toasANDbpjGYajgd2W6L2jRXcM9jEVGEk40YBt2V9tYV+4gNyjRcUjooxUoftNpWspXOqjF4AmFYi8nandYpmw3qWEKBrEUCxx90cAlWg3n1cbtad9/6D9t0kAekmjEqZsYpke6nRISDuXsb5Oqkz3rPABL75yyUst/g84tpQnsDLNG7wt4r/oXXqKSIsx/EW6jOgK7FMUrM4ecrm2aMnaNg9M0VN4gLwfwJL8MXEL4lmhWBdmoPAIqC0K18svG4iQTWV6CugBhz/Pk0WgKcjVlY2S6/c6XtKbDSokYG81seKIbkCmbsNhjstpsmKzuF5lp3qJH7D7wCXgIwpn1uEQh246k/hwfQykax8pO1PvL28Ei0JAAA=" ConnectionId="7282a2aa-a884-4b00-9c20-1b4a01b4b56b" DisplayName="Get Sheet List" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="ConnectorHttpActivity_6" UiPathActivityTypeId="a508ec5b-8e60-3437-9fe6-841f0f30ec0f">
+      <isactr:ConnectorHttpActivity.FieldObjects>
+        <isactr:FieldObject Name="method" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">GET</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="url" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">https://api.smartsheet.com/2.0/sheets</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="headers" Type="FieldArgument" />
+        <isactr:FieldObject Name="query" Type="FieldArgument" />
+        <isactr:FieldObject Name="body" Type="FieldArgument" />
+        <isactr:FieldObject Name="out_headers" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[ResponseHeaders]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_body" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[ResponseBody]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_code" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:Int32">[ResponseCode]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorHttpActivity.FieldObjects>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </isactr:ConnectorHttpActivity>
+    <If Condition="[ResponseCode&lt;&gt;200]" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,182.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[new SystemException(&quot;Get Sheet List API Call Failed with reason - &quot; + ResponseCode.ToString + &quot;:&quot; + ResponseBody)]" sap:VirtualizedContainerService.HintSize="416,118.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_3" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Assign DisplayName="Get Sheets Array " sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JArray">[sheetsArray]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JArray">[CType(JObject.Parse(ResponseBody)("data"), Newtonsoft.Json.Linq.JArray)]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="fetch Order Processing Sheet ID" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int64">[orderSheetId]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int64" xml:space="preserve">[CLng(
+  sheetsArray.
+    Where(Function(s) s("name").ToString = "Order_Processed").
+    First()("id").ToString
+)]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <isactr:ConnectorHttpActivity Configuration="H4sIAAAAAAAACu1WS2/aQBD+K9UeKwdSDj1YVSQeTkClxU1Ieqhy2NgDLNi7yz5CHIv/3tm1TZKCWipFvTQcwDOe+eab2ZlZSnLOIEt1X3BDGQdFwpKMuLSm0pPwR0m+0hxISHIwC5GSgAyYlhktavWXRj0tpJO1UYzPUb6EtWUKUhIaZSGoIo1FQg0THA17Ii3INtjhW5XtgUc8lYJx8wrwC6ApKP2EJO6WkDjkc6FyalCTssQ5U1V8qsIEDIW5zYGbWnN25kNrKbiGY0OvLajiNQL/KdCdk/dLNQDN5mhfVgBdH6w62+q5dhiyFFx6NoPq7SXMvMevHdDob2hmvSm5iKbkdnvruLyAvFqIzVGQI/1dqNUsE5voQSrQ2mdY1Xc/XDy5mqJTfO2+B9E4mkZO7E77Q08Difw/uR7bkGg4sebgbP/D4agovHXtW9f+fackwg/toasANDbpjGYajgd2W6L2jRXcM9jEVGEk40YBt2V9tYV+4gNyjRcUjooxUoftNpWspXOqjF4AmFYi8nandYpmw3qWEKBrEUCxx90cAlWg3n1cbtad9/6D9t0kAekmjEqZsYpke6nRISDuXsb5Oqkz3rPABL75yyUst/g84tpQnsDLNG7wt4r/oXXqKSIsx/EW6jOgK7FMUrM4ecrm2aMnaNg9M0VN4gLwfwJL8MXEL4lmhWBdmoPAIqC0K18svG4iQTWV6CugBhz/Pk0WgKcjVlY2S6/c6XtKbDSokYG81seKIbkCmbsNhjstpsmKzuF5lp3qJH7D7wCXgIwpn1uEQh246k/hwfQykax8pO1PvL28Ei0JAAA=" ConnectionId="7282a2aa-a884-4b00-9c20-1b4a01b4b56b" DisplayName="Get Order Sheet " sap:VirtualizedContainerService.HintSize="486,504" sap2010:WorkflowViewState.IdRef="ConnectorHttpActivity_7" UiPathActivityTypeId="a508ec5b-8e60-3437-9fe6-841f0f30ec0f">
+      <isactr:ConnectorHttpActivity.FieldObjects>
+        <isactr:FieldObject Name="method" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">GET</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="url" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">["https://api.smartsheet.com/2.0/sheets/" &amp; orderSheetId.ToString() &amp; "?level=2"]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="headers" Type="FieldArgument" />
+        <isactr:FieldObject Name="query" Type="FieldArgument" />
+        <isactr:FieldObject Name="body" Type="FieldArgument" />
+        <isactr:FieldObject Name="out_headers" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[ResponseHeaders]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_body" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[ResponseBody]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_code" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:Int32">[ResponseCode]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorHttpActivity.FieldObjects>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </isactr:ConnectorHttpActivity>
+    <If Condition="[ResponseCode&lt;&gt;200]" sap:VirtualizedContainerService.HintSize="486,417.3333333333333" sap2010:WorkflowViewState.IdRef="If_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,182.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[new SystemException(&quot;Get Order Sheet API Call Failed with reason - &quot; + ResponseCode.ToString + &quot;:&quot; + ResponseBody)]" sap:VirtualizedContainerService.HintSize="416,118.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_5" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON Sheet response" sap:VirtualizedContainerService.HintSize="486,176" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[sheetObj]" JsonString="[ResponseBody]" />
+    <Assign sap:VirtualizedContainerService.HintSize="486,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JArray">[ColumnArray]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JArray">[CType(sheetObj("columns"), Newtonsoft.Json.Linq.JArray)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="486,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int64)">[ColMap]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int64)">[New Dictionary(Of String, Int64)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each col" sap:VirtualizedContainerService.HintSize="486,367.3333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ColumnArray]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="njl:JToken">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="njl:JToken" Name="col" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,235.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="416,171.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int64">[colMap(col("title").ToString.Trim)]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int64">[CLng(col("id").ToString)]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Join(&quot;, &quot;, colMap.Select(Function(kvp) kvp.Key &amp; &quot;:&quot; &amp; kvp.Value))]" />
+    <Sequence DisplayName="Load Row in Sheet" sap:VirtualizedContainerService.HintSize="486,1410" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="njl:JArray">[cellsArr]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="njl:JArray" xml:space="preserve">[New Newtonsoft.Json.Linq.JArray(
+  New Newtonsoft.Json.Linq.JObject(
+    New Newtonsoft.Json.Linq.JProperty("columnId", colMap("OrderID")),
+    New Newtonsoft.Json.Linq.JProperty("value", in_TransactionItem.SpecificContent("OrderID").ToString)
+  ),
+  New Newtonsoft.Json.Linq.JObject(
+    New Newtonsoft.Json.Linq.JProperty("columnId", colMap("CustomerName")),
+    New Newtonsoft.Json.Linq.JProperty("value", in_TransactionItem.SpecificContent("CustomerName").ToString)
+  ),
+  New Newtonsoft.Json.Linq.JObject(
+    New Newtonsoft.Json.Linq.JProperty("columnId", colMap("Product")),
+    New Newtonsoft.Json.Linq.JProperty("value", in_TransactionItem.SpecificContent("Product").ToString)
+  ),
+  New Newtonsoft.Json.Linq.JObject(
+    New Newtonsoft.Json.Linq.JProperty("columnId", colMap("Quantity")),
+    New Newtonsoft.Json.Linq.JProperty("value", CDbl(in_TransactionItem.SpecificContent("Quantity")))
+  ),
+  New Newtonsoft.Json.Linq.JObject(
+    New Newtonsoft.Json.Linq.JProperty("columnId", colMap("UnitPrice")),
+    New Newtonsoft.Json.Linq.JProperty("value", CDbl(in_TransactionItem.SpecificContent("UnitPrice")))
+  ),
+  New Newtonsoft.Json.Linq.JObject(
+    New Newtonsoft.Json.Linq.JProperty("columnId", colMap("Status")),
+    New Newtonsoft.Json.Linq.JProperty("value", in_TransactionItem.SpecificContent("Status").ToString),
+    New Newtonsoft.Json.Linq.JProperty("strict", False)
+  ),
+  New Newtonsoft.Json.Linq.JObject(
+    New Newtonsoft.Json.Linq.JProperty("columnId", colMap("TotalAmount")),
+    New Newtonsoft.Json.Linq.JProperty("value", CDbl(in_TransactionItem.SpecificContent("TotalAmount")))
+  )
+)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_11">
+        <Assign.To>
+          <OutArgument x:TypeArguments="njl:JArray">[rowsPayload]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="njl:JArray" xml:space="preserve">[New Newtonsoft.Json.Linq.JArray(
+  New Newtonsoft.Json.Linq.JObject(
+    New Newtonsoft.Json.Linq.JProperty("toBottom", True),
+    New Newtonsoft.Json.Linq.JProperty("cells", cellsArr)
+  )
+)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <isactr:ConnectorHttpActivity Configuration="H4sIAAAAAAAACu1WS2/aQBD+K9UeKwdSDj1YVSQeTkClxU1Ieqhy2NgDLNi7yz5CHIv/3tm1TZKCWipFvTQcwDOe+eab2ZlZSnLOIEt1X3BDGQdFwpKMuLSm0pPwR0m+0hxISHIwC5GSgAyYlhktavWXRj0tpJO1UYzPUb6EtWUKUhIaZSGoIo1FQg0THA17Ii3INtjhW5XtgUc8lYJx8wrwC6ApKP2EJO6WkDjkc6FyalCTssQ5U1V8qsIEDIW5zYGbWnN25kNrKbiGY0OvLajiNQL/KdCdk/dLNQDN5mhfVgBdH6w62+q5dhiyFFx6NoPq7SXMvMevHdDob2hmvSm5iKbkdnvruLyAvFqIzVGQI/1dqNUsE5voQSrQ2mdY1Xc/XDy5mqJTfO2+B9E4mkZO7E77Q08Difw/uR7bkGg4sebgbP/D4agovHXtW9f+fackwg/toasANDbpjGYajgd2W6L2jRXcM9jEVGEk40YBt2V9tYV+4gNyjRcUjooxUoftNpWspXOqjF4AmFYi8nandYpmw3qWEKBrEUCxx90cAlWg3n1cbtad9/6D9t0kAekmjEqZsYpke6nRISDuXsb5Oqkz3rPABL75yyUst/g84tpQnsDLNG7wt4r/oXXqKSIsx/EW6jOgK7FMUrM4ecrm2aMnaNg9M0VN4gLwfwJL8MXEL4lmhWBdmoPAIqC0K18svG4iQTWV6CugBhz/Pk0WgKcjVlY2S6/c6XtKbDSokYG81seKIbkCmbsNhjstpsmKzuF5lp3qJH7D7wCXgIwpn1uEQh246k/hwfQykax8pO1PvL28Ei0JAAA=" ConnectionId="7282a2aa-a884-4b00-9c20-1b4a01b4b56b" DisplayName="Load Row data in Sheet" sap:VirtualizedContainerService.HintSize="452,556.6666666666666" sap2010:WorkflowViewState.IdRef="ConnectorHttpActivity_8" UiPathActivityTypeId="a508ec5b-8e60-3437-9fe6-841f0f30ec0f">
+        <isactr:ConnectorHttpActivity.FieldObjects>
+          <isactr:FieldObject Name="method" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:String">POST</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="url" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:String">["https://api.smartsheet.com/2.0/sheets/" &amp; orderSheetId.ToString() &amp; "/rows"]</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="headers" Type="FieldArgument" />
+          <isactr:FieldObject Name="query" Type="FieldArgument" />
+          <isactr:FieldObject Name="body" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:String">[rowsPayload.ToString(Newtonsoft.Json.Formatting.None)]</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="out_headers" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[ResponseHeaders]</OutArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="out_body" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="x:String">[ResponseBody]</OutArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="out_code" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="x:Int32">[ResponseCode]</OutArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+        </isactr:ConnectorHttpActivity.FieldObjects>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </isactr:ConnectorHttpActivity>
+      <If Condition="[ResponseCode&lt;&gt;200]" DisplayName="Row Creation Validation" sap:VirtualizedContainerService.HintSize="452,408" sap2010:WorkflowViewState.IdRef="If_6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,182.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_22">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Throw Exception="[new SystemException(&quot;Add Data Row API Call Failed with reason - &quot; + ResponseCode.ToString + &quot;:&quot; + ResponseBody)]" sap:VirtualizedContainerService.HintSize="416,118.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_6" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[id_Sheet]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="toy2zVaI-Ue1BTjYhD2tLw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="36be0725-079c-48fc-9d48-e4ebeaee95c0" CvElementArea="846, 620, 813, 64" CvType="InputBox" DesignTimeRectangle="848, 622, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='lodestar--focus-using-before css-133eide' parentid='desktopHome' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="844299e0-6f84-4ac8-b32c-122eb2e47119" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="36be0725-079c-48fc-9d48-e4ebeaee95c0" DesignTimeRectangle="848, 580, 150, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='TotalAmount' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='TotalAmount' /&gt;" Guid="87cc084c-77ad-4102-81e9-31e25503cb2a" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="a1964aebd049ad250a076352fad1ce93.png" xmlns="">0gE_rkfgsUE23-_OKgNQ_LA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

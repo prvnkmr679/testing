@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="ZRuV-vHVF0KMzpVBUDF2nA" Reference="WWxKmngVZUOdgdusUY41ww/BRxBbV0ZhUWHf9N2B-7cBA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-11, -11, 1942, 1030" BrowserType="Chrome" ContentHash="IA6XiE4TUUKOlfu3RglLwQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAVdJREFUOE9jYGBgYFA2D/xPCk7Mb/oP0gcH6Arw4aTC5v+7Dp36S5YBfnHF/2/ff/zfyDWWdAPMvRL/P3vx+n9kRg2YT7IBew+f/r9kzXYY/x9eA/SdolD4hXX9/z9++vLf0CUGvwEgBQePnfsPAsvW7QSLadtH/H/77sP/jkkL4QaqWARhN0DdOuR/U+8csAEgEJhY9r+5f+7/Zy/f/NeyC0cyIBh/IG7ZfQRswNFTF/8/f/Xmf3nLFBR5VUsCBvjHl8Bd8fT5K7DL0Az4g9cAED5x9grYAJAX0OVULAJ/EDQgraTt/5ev3/8bOEUjNJoHfgSzLYK+ETRAxSLof13XzPcwjSqWgdkalqG6KhaBv1UsAj8RNACu0TyoX80hUgSmVsU8uELFPPA8PgP+qZgHHVe1CM7QdgjlQVEIBaGhocwoAhaeiT8cAjMOgJyp4hAkgyJJAAAA5Mdx/gdGd4gAAAAASUVORK5CYII=" Reference="WWxKmngVZUOdgdusUY41ww/BRxBbV0ZhUWHf9N2B-7cBA" Selector="&lt;html app='chrome.exe' title='*Smartsheet.com' /&gt;" Url="https://app.smartsheet.com/*" Version="V2">
+      <TargetApp.Arguments>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Arguments>
+      <TargetApp.WorkingDirectory>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.WorkingDirectory>
+      <imageRef attrName="InformativeScreenshot" originalValue="e45a760708a64e595af625d438e4d2e9.jpg" xmlns="">0B9wiz7mWqkOvWrqNfYJ3oQ</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="hNFUwjxgmk26WUiK4l9knQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/b/home" CVScreenId="c5dca275-4682-4e55-9f68-f8af6577bf01" DesignTimeRectangle="384, 607, 542, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl isleaf='1' parentid='foid:16' tag='SPAN' type='' class='css-1ugayw2' aaname='Start a new project, program or process' matching:isleaf='fuzzy' fuzzylevel:isleaf='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Start a new project, program or process' /&gt;" Guid="7ae409b3-d9e2-4449-99d7-553da6a6c23a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Home - Smartsheet.com' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="938f08566d5d759e9a984a113e4cb059.png" xmlns="">02K7XmjY9lU2tIzU_0tbr1Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

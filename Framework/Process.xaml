@@ -1,0 +1,413 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>818.4,454.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="100">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_folders_sheets.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_template.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_sheets_template.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_attachments_file.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_folders.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_rows_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C29BC076CB2_sheets_rows_Create_NNRGJSBSEPY3EWP1KTXLR90Z0SPZP3.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_sheets_rows_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_sheets.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C6399CDD166_sheets_rows_Create_NNRGJSBSEPY3EWP1KTXLR90Z0SPZP3.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CEB24706B3B_sheets_rows_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CEB24706B3B_sheets_rows_Create_NNRGJSBSEPY3EWP1KTXLR90Z0SPZP3.Bundle</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>C6399CDD166_folders_.QDOOsHt1LF1En0SB1ke1Vb</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_t.ZM89C12rlOE1vMJmQ3LFmUa1</AssemblyReference>
+      <AssemblyReference>C6399CDD166_sheets_t.dpkrAHb8dB136bkXlkL002</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_a.WfI6K2WMz0K1oTlgER7UuB</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_C.qczKD1DQO3L1X9hz14FTgbR3</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_folders.XW9duLMH1C1insC42yvOoc</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_r.Xjs6i1Sw8eP1dISuT43wkHI3</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets.uAhlx28LZ2R1BQOFR3zvU222</AssemblyReference>
+      <AssemblyReference>C29BC076CB2_sheets_r.tuUtH3k6IRN15nznt1iak1f4</AssemblyReference>
+      <AssemblyReference>C6399CDD166_sheets_r.z8b6f3L3UlF1hOHt51j562o2</AssemblyReference>
+      <AssemblyReference>C6399CDD166_sheets.XV7iW2VkRML1XlTX02wEycH3</AssemblyReference>
+      <AssemblyReference>C6399CDD166_sheets_r.IW6xL3kYJWJ15JT9G2qpNxt</AssemblyReference>
+      <AssemblyReference>CEB24706B3B_sheets_r.PMtu53XnVKS1md1mg27dlxU4</AssemblyReference>
+      <AssemblyReference>CEB24706B3B_sheets_r.puzdo3a7jpD1ymvGj3LhTXl2</AssemblyReference>
+      <AssemblyReference>CEB24706B3B_sheets_r.1V7iJ1W2eoA1IvQR41oqCmF1</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="578.6666666666666,507.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SmartSheet - Invoke Workflow File (SmartSheet.xaml)" sap:VirtualizedContainerService.HintSize="450,182.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SmartSheet.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Home - Smartsheet.com" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2779.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Start a new project, pr…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/home" ContentHash="ng-jfDNz0EuJuzZJNkdCMA" DesignTimeRectangle="220, 552, 778, 180" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='css-84eeqx' parentid='foid:16' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Start a new project, program or process&amp;#xA;Choose a template or start from scratch' /&gt;" Guid="414c9644-63c9-417e-82f7-a0d9faa3cf83" InformativeScreenshot="9d7b9e0b3864750697522f75e564a21e.png" Reference="WWxKmngVZUOdgdusUY41ww/JbECREaj9EGX05zd-FZ5ag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Home - Smartsheet.com' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Recents'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,199.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/r/create" CVScreenId="460664df-f7a5-42d0-9b90-4203af416cb6" ContentHash="r44q_iYUz0S0T59yFDgjyQ" CvTextArea="44, 599, 69, 18" CvTextArgument="Recents" CvType="Text" DesignTimeRectangle="46, 597, 67, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='recents-label' tag='SPAN' /&gt;" Guid="b73bd883-6c81-4bbd-bd28-815bdd1fa481" InformativeScreenshot="04ee1634d7d9b448a82bcbaf8c0f2fa4.png" Reference="WWxKmngVZUOdgdusUY41ww/NUrzEfCMwUG5yMO3yRGmug" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Let&amp;apos;s start a new project, program, or process - Smartsheet.com' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="460664df-f7a5-42d0-9b90-4203af416cb6" DesignTimeRectangle="58, 552, 42, 42" ElementType="Button" FuzzyAccuracy="0.83" FuzzySelectorArgument="&lt;webctrl aria-labelledby='recents-label' aria-role='button' tag='BUTTON' type='button' class='css-hnhxog lodestar--focus-using-before css-nmye9v' aaname='' matching:aria-labelledby='fuzzy' fuzzylevel:aria-labelledby='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0c45d9f5-d64e-4f21-a480-0b7523512b50" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Orders_Form'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/r/create" CVScreenId="460664df-f7a5-42d0-9b90-4203af416cb6" ContentHash="tUIQt21U6U-U1kBSQbjjDg" DesignTimeRectangle="178, 291, 457, 30" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzyAccuracy="0.85" FuzzySelectorArgument="&lt;webctrl parentid='recents-panel-id' tag='A' type='' class='css-rxsfgg' aaname='Orders_Form' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Orders_Form' /&gt;" Guid="735ade97-6532-4928-a60e-7919cc622425" InformativeScreenshot="6245054e50120c495480c7299ea92fe6.png" Reference="WWxKmngVZUOdgdusUY41ww/-Y2FVTdXxUSJmrNId40cGA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Let&amp;apos;s start a new project, program, or process - Smartsheet.com' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Orders'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1" CVScreenId="ae3c157b-5222-459a-8566-8e2c19dd9dfd" ContentHash="RlVWURNP0E2f1uUdqhnndA" CvTextArea="287, 509, 69, 19" CvTextArgument="Orders" CvType="Text" DesignTimeRectangle="250, 498, 318, 42" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Orders' parentid='workspace-panel-cuff' tag='BUTTON' type='button' class='lodestar--focus-using-before css-1v2j0u' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Orders' /&gt;" Guid="6b14bade-dcc8-40ed-aeed-9e54de36313a" InformativeScreenshot="c4e138d9469c292fc9f75f092b7fdc96.png" Reference="WWxKmngVZUOdgdusUY41ww/MjAiXJeq-EO-4gW7yYk5PQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders_Form - Smartsheet.com' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="ae3c157b-5222-459a-8566-8e2c19dd9dfd" DesignTimeRectangle="289, 506, 267, 27" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Orders' parentid='workspace-panel-cuff' tag='SPAN' type='' class='css-1t8t60m' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Orders' /&gt;" Guid="5a314f23-87a5-4e58-bf53-fb79adafef21" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'OrderID'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Text="[in_TransactionItem.SpecificContent(&quot;OrderID&quot;).ToString()]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="dc097c72-990e-43a9-b7c8-4d628aaef25e" ContentHash="OvLO-89cGkyw3KbsNN8l3g" CvElementArea="846, 557, 813, 65" CvType="InputBox" DesignTimeRectangle="848, 559, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' parentid='desktopHome' tag='DIV' class='lodestar--focus-using-before css-133eide' aaname='' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a98bd280-ec53-48d7-af3f-b08ecffd3a77" InformativeScreenshot="6364ba822a9b3bd2d31c998d4b8c5fc5.png" IsResponsive="True" Reference="WWxKmngVZUOdgdusUY41ww/OirAa8ein0qnod-C3i3o6g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="dc097c72-990e-43a9-b7c8-4d628aaef25e" DesignTimeRectangle="848, 517, 91, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='lodestar-utils-fl-label-gen-id-bgnqqn' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' aaname='OrderID' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='OrderID' /&gt;" Guid="b4668f8c-ccd4-450f-bae8-ad5d85a19c4e" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'CustomerName'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Text="[in_TransactionItem.SpecificContent(&quot;CustomerName&quot;).ToString()]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="dc097c72-990e-43a9-b7c8-4d628aaef25e" ContentHash="TxzHafJFG0mPmjvfDhJ-RA" CvElementArea="846, 695, 812, 64" CvType="InputBox" DesignTimeRectangle="849, 712, 808, 30" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aria-labelledby='lodestar-utils-fl-label-gen-id-x89c1x' tag='INPUT' type='text' class='css-1bwzj10' aaname='CustomerName' matching:aria-labelledby='fuzzy' fuzzylevel:aria-labelledby='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="f1c0ed94-bdd7-4f39-93ab-ef5e8751dc15" InformativeScreenshot="c5653da62ae12c28d7fbe2e9ff22e3f5.png" IsResponsive="True" Reference="WWxKmngVZUOdgdusUY41ww/xqztTaonU0qLngpNhXQAgg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="dc097c72-990e-43a9-b7c8-4d628aaef25e" DesignTimeRectangle="848, 655, 182, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl type='' class='css-10tfwpz' tag='LABEL' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='CustomerName' /&gt;" Guid="b3fe0c53-8f2c-41d2-8679-a131302f2232" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Product'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="SameAsCard" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Text="[in_TransactionItem.SpecificContent(&quot;Product&quot;).ToString()]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="dc097c72-990e-43a9-b7c8-4d628aaef25e" ContentHash="oFXLHQXZhUuGQx_8BS8iVQ" CvElementArea="846, 833, 814, 65" CvType="InputBox" DesignTimeRectangle="848, 835, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='lodestar--focus-using-before css-133eide' parentid='desktopHome' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="13a4c46d-0820-433d-8b93-9c87d286889a" InformativeScreenshot="4ecb5e1213243f1b2b424bc32175ed58.png" IsResponsive="True" Reference="WWxKmngVZUOdgdusUY41ww/4Us8l1DjOU-08TrxanhXrA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="dc097c72-990e-43a9-b7c8-4d628aaef25e" DesignTimeRectangle="848, 793, 92, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Product' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Product' /&gt;" Guid="4c5c2d95-81f4-4e58-9d19-52d48f0146a7" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Quantity'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Text="[in_TransactionItem.SpecificContent(&quot;Quantity&quot;).ToString()]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="a958cd65-5cfc-4cad-a2a0-8786c06d9f4a" ContentHash="yAp8rAmP-0ilOu-dVqs8Fg" CvElementArea="846, 685, 812, 65" CvType="InputBox" DesignTimeRectangle="848, 687, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='lodestar--focus-using-before css-133eide' parentid='desktopHome' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a9b5f707-e7be-40ed-9a64-d0efc0fe9538" InformativeScreenshot="6540642a7a51e7b2f7e257b59b838226.png" IsResponsive="True" Reference="WWxKmngVZUOdgdusUY41ww/YvjZTnCc2Eygh8R7nnWLFw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="a958cd65-5cfc-4cad-a2a0-8786c06d9f4a" DesignTimeRectangle="848, 645, 100, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Quantity' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Quantity' /&gt;" Guid="9e7d7448-92da-472a-9f38-b8b910abf983" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'UnitPrice'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="SameAsCard" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Text="[in_TransactionItem.SpecificContent(&quot;UnitPrice&quot;).ToString()]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="efacacfb-a7d0-4e07-b5a8-0325825498a2" ContentHash="ZdcDF5UIrU2wuyT75tmY-g" CvElementArea="846, 756, 812, 65" CvType="InputBox" DesignTimeRectangle="848, 758, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='lodestar--focus-using-before css-133eide' parentid='desktopHome' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="38319b10-6849-4e64-a73e-3e71cd72c9d0" InformativeScreenshot="43d40503ae8abc3126feea42f6810a94.png" IsResponsive="True" Reference="WWxKmngVZUOdgdusUY41ww/9eYeqkIZhkuPSen5bq9S2g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="efacacfb-a7d0-4e07-b5a8-0325825498a2" DesignTimeRectangle="848, 716, 107, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='lodestar-utils-fl-label-gen-id-lxvux4' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' aaname='UnitPrice' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='UnitPrice' /&gt;" Guid="d4f7fc0e-99e8-47c9-954d-f8f0acb0c1ab" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'TotalAmount'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="SameAsCard" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Text="[in_TransactionItem.SpecificContent(&quot;TotalAmount&quot;).ToString]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="36be0725-079c-48fc-9d48-e4ebeaee95c0" ContentHash="toy2zVaI-Ue1BTjYhD2tLw" CvElementArea="846, 620, 813, 64" CvType="InputBox" DesignTimeRectangle="848, 622, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='lodestar--focus-using-before css-133eide' parentid='desktopHome' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="844299e0-6f84-4ac8-b32c-122eb2e47119" InformativeScreenshot="a1964aebd049ad250a076352fad1ce93.png" IsResponsive="True" Reference="WWxKmngVZUOdgdusUY41ww/hOAl8imZIkC2nM_-WF5tfw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="36be0725-079c-48fc-9d48-e4ebeaee95c0" DesignTimeRectangle="848, 580, 150, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='TotalAmount' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='TotalAmount' /&gt;" Guid="87cc084c-77ad-4102-81e9-31e25503cb2a" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Status'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="SameAsCard" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Text="[in_TransactionItem.SpecificContent(&quot;Status&quot;).ToString]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="92f7f9f7-5ba6-402b-8e65-a65f80c39f3e" ContentHash="VrYbdpGov0SUJ-PvrwL3qw" CvElementArea="846, 644, 813, 64" CvType="InputBox" DesignTimeRectangle="848, 646, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='lodestar--focus-using-before css-133eide' parentid='desktopHome' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b6d38361-ad40-4ab3-b213-39ff669fbcb0" InformativeScreenshot="37f893c4e56045feb1b4abea9e4486fb.png" IsResponsive="True" Reference="WWxKmngVZUOdgdusUY41ww/adZmhhlhckOzsk2fSoUlwA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="92f7f9f7-5ba6-402b-8e65-a65f80c39f3e" DesignTimeRectangle="848, 604, 76, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Status' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Status' /&gt;" Guid="8093257d-2cc7-40ec-916b-b7b43c6744a8" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Submit'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f95da6f-fa73-42c5-adb9-d9402a7b86bb" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="a3472667-5704-47bb-894d-36c2ba358161" ContentHash="2Z1Azr-ls06K8UxBhNs-sA" CvElementArea="844, 740, 125, 65" CvTextArea="870, 761, 73, 21" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="848, 742, 118, 60" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Submit' parentid='desktopHome' tag='BUTTON' type='button' class='lodestar--focus-using-before css-n7ab4a' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Submit' /&gt;" Guid="2715ce8b-4b85-42a5-9f9b-5cf3b8e40dd6" InformativeScreenshot="96199cfff9204cc364acac23e0672e9b.png" Reference="WWxKmngVZUOdgdusUY41ww/O3Ewsdg4_ECTet8XURoxxg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="a3472667-5704-47bb-894d-36c2ba358161" DesignTimeRectangle="860, 757, 94, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='css-wis292' parentid='desktopHome' tag='SPAN' type='' aaname='Submit' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Submit' /&gt;" Guid="fab40c6c-0250-4810-bbb5-a383d8baaab0" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.OCREngine>
+              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                </ActivityFunc.Argument>
+              </ActivityFunc>
+            </uix:NApplicationCard.OCREngine>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" ContentHash="cxTc7BbGB0abBFXsl2o7xg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAVdJREFUOE9jYGBgYFA2D/xPCk7Mb/oP0gcH6Arw4aTC5v+7Dp36S5YBfnHF/2/ff/zfyDWWdAPMvRL/P3vx+n9kRg2YT7IBew+f/r9kzXYY/x9eA/SdolD4hXX9/z9++vLf0CUGvwEgBQePnfsPAsvW7QSLadtH/H/77sP/jkkL4QaqWARhN0DdOuR/U+8csAEgEJhY9r+5f+7/Zy/f/NeyC0cyIBh/IG7ZfQRswNFTF/8/f/Xmf3nLFBR5VUsCBvjHl8Bd8fT5K7DL0Az4g9cAED5x9grYAJAX0OVULAJ/EDQgraTt/5ev3/8bOEUjNJoHfgSzLYK+ETRAxSLof13XzPcwjSqWgdkalqG6KhaBv1UsAj8RNACu0TyoX80hUgSmVsU8uELFPPA8PgP+qZgHHVe1CM7QdgjlQVEIBaGhocwoAhaeiT8cAjMOgJyp4hAkgyJJAAAA5Mdx/gdGd4gAAAAASUVORK5CYII=" InformativeScreenshot="a220381929342937d353d99ec062ccd8.jpg" Reference="WWxKmngVZUOdgdusUY41ww/impT1_QynE-2WLnk5F0Lmw" Selector="&lt;html app='chrome.exe' title='Home - Smartsheet.com' /&gt;" Url="https://app.smartsheet.com/home" Version="V2">
+                <uix:TargetApp.Arguments>
+                  <InArgument x:TypeArguments="x:String" />
+                </uix:TargetApp.Arguments>
+                <uix:TargetApp.WorkingDirectory>
+                  <InArgument x:TypeArguments="x:String" />
+                </uix:TargetApp.WorkingDirectory>
+              </uix:TargetApp>
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>

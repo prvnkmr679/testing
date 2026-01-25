@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="OvLO-89cGkyw3KbsNN8l3g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/sheets/665Hx6XpxwP5fRGp5rWJG9q6r34pQvmqvCG4mFf1/forms/3009780152621" CVScreenId="dc097c72-990e-43a9-b7c8-4d628aaef25e" CvElementArea="846, 557, 813, 65" CvType="InputBox" DesignTimeRectangle="848, 559, 810, 60" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' parentid='desktopHome' tag='DIV' class='lodestar--focus-using-before css-133eide' aaname='' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a98bd280-ec53-48d7-af3f-b08ecffd3a77" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Orders' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="dc097c72-990e-43a9-b7c8-4d628aaef25e" DesignTimeRectangle="848, 517, 91, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='lodestar-utils-fl-label-gen-id-bgnqqn' tag='SPAN' type='' class='sds-type-ramp-v2 css-1hy72ae' aaname='OrderID' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='OrderID' /&gt;" Guid="b4668f8c-ccd4-450f-bae8-ad5d85a19c4e" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="6364ba822a9b3bd2d31c998d4b8c5fc5.png" xmlns="">03WGWdEhAmUChnJHJQVPibw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

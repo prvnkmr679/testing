@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Overview - UiPath Orchestrator",
+  "Type": "Screen",
+  "Id": "pwahLstQAUCYvgOJ8QfZzQ",
+  "Reference": "WWxKmngVZUOdgdusUY41ww/pwahLstQAUCYvgOJ8QfZzQ",
+  "ParentRef": "WWxKmngVZUOdgdusUY41ww/cPHoT5usHEyg8tlFrpAHzw",
+  "Created": "2026-01-22T04:58:48.1354333Z",
+  "Updated": "2026-01-22T04:58:48.1354333Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

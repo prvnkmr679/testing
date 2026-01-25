@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ng-jfDNz0EuJuzZJNkdCMA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/home" DesignTimeRectangle="220, 552, 778, 180" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='css-84eeqx' parentid='foid:16' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Start a new project, program or process&amp;#xA;Choose a template or start from scratch' /&gt;" Guid="414c9644-63c9-417e-82f7-a0d9faa3cf83" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Home - Smartsheet.com' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="9d7b9e0b3864750697522f75e564a21e.png" xmlns="">06p8uhHmDYE67fz0GUliz7w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

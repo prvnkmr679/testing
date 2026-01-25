@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="r44q_iYUz0S0T59yFDgjyQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.smartsheet.com/r/create" CVScreenId="460664df-f7a5-42d0-9b90-4203af416cb6" CvTextArea="44, 599, 69, 18" CvTextArgument="Recents" CvType="Text" DesignTimeRectangle="46, 597, 67, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='recents-label' tag='SPAN' /&gt;" Guid="b73bd883-6c81-4bbd-bd28-815bdd1fa481" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Let&amp;apos;s start a new project, program, or process - Smartsheet.com' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="460664df-f7a5-42d0-9b90-4203af416cb6" DesignTimeRectangle="58, 552, 42, 42" ElementType="Button" FuzzyAccuracy="0.83" FuzzySelectorArgument="&lt;webctrl aria-labelledby='recents-label' aria-role='button' tag='BUTTON' type='button' class='css-hnhxog lodestar--focus-using-before css-nmye9v' aaname='' matching:aria-labelledby='fuzzy' fuzzylevel:aria-labelledby='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0c45d9f5-d64e-4f21-a480-0b7523512b50" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="04ee1634d7d9b448a82bcbaf8c0f2fa4.png" xmlns="">07E3CY4qpOUaA6DXSHxL-pA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
