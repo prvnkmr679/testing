@@ -1,0 +1,28 @@
+name: UiPath CI-CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-deploy:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install UiPath CLI
+      run: choco install uipath.cli -y
+
+    - name: Pack UiPath Project
+      run: uipcli pack . --output ./packages
+
+    - name: Deploy Package to Orchestrator
+      run: |
+        uipcli deploy packages `
+          --accountName ${{ secrets.UIPATH_ACCOUNT_NAME }} `
+          --tenantName ${{ secrets.UIPATH_TENANT_NAME }} `
+          --applicationId ${{ secrets.UIPATH_APP_ID }} `
+          --applicationSecret ${{ secrets.UIPATH_APP_SECRET }} `
+          --folder "Shared"
